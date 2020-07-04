@@ -13,17 +13,17 @@ IMAGE_FILE_TYPES = ['png', 'jpg', 'jpeg']
 from django.db.models import Q
 
 # Create your views here.
-@login_required
+# @login_required
 def main(request, *args, **kwargs):
-	if not request.user.is_authenticated:
-		return render(request,'login.html',{})
-	else:
-		queryset  = Guides.objects.all()
-		context = {
-				"object_list" : queryset,
-		}
+	# if not request.user.is_authenticated:
+	# 	return render(request,'login.html',{})
+	# else:
+	queryset  = Guides.objects.all()
+	context = {
+			"object_list" : queryset,
+	}
 	return render(request, 'home.html',context)
-@login_required
+#@login_required
 def search(request):
 	template = 'search.html'
 	query = request.GET.get('q')
@@ -35,7 +35,7 @@ def search(request):
 			"items":results
 	} 
 	return render(request, 'search.html', context)
-@login_required
+#@login_required
 def logout_user(request):
     logout(request)
     form = RegisterForm(request.POST or None)
@@ -44,7 +44,7 @@ def logout_user(request):
     }
     return redirect("http://127.0.0.1:8000/accounts/login")
 
-@login_required
+#@login_required
 def register(request):
 	# if not request.user.is_authenticated:
 	# 	return render(request, 'login.html',{})
@@ -70,20 +70,20 @@ def register(request):
 	}
 	return render(request, 'create.html', context)
 
-@login_required
+#@login_required
 def detail(request,id):
-	if not request.user.is_authenticated:
-		return render(request, 'login.html',{})
-	else:
-		obj = Guides.objects.get(id=id)
-		context = {'object'  : obj}
+	# if not request.user.is_authenticated:
+	# 	return render(request, 'login.html',{})
+	# else:
+	obj = Guides.objects.get(id=id)
+	context = {'object'  : obj}
 	return render(request, "detail.html",context)
 
-@login_required
+#@login_required
 def guide_profile(request, id):
-	if not request.user.is_authenticated:
-		return render(request, 'login.html',{})
-	else:
+	# if not request.user.is_authenticated:
+	# 	return render(request, 'login.html',{})
+	# else:
 		
-		return render(request, "profile.html")
+	return render(request, "profile.html")
 
