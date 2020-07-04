@@ -4,12 +4,12 @@
 	<form method="GET" action="" class="form-inline">{% csrf_token %}
 {{ form.as_p}}
 	 <input type="text" name="q" value = "{{ request.GET.q }}" placeholder="search blog/author / etc...." class="form-control"> 
-	<input type="submit"  value="search" class="btn btn-primary">
+	<input type="submit"  value="search" class="btn " style="background-color:teal;color: white">
 </form>
-<button class="btn btn-warning" style="float: right;"><a href="http://127.0.0.1:8000/blog/create/"
+<button class="btn " style="float: right;background-color: teal"><a href="http://127.0.0.1:8000/blog/create/"
 	><span style="float: right;color: white"> Write your view..</span></a></button>
  </div>
-{% for i in items %}
+<!-- {% for i in items %}
 	 
  	<div class="list">
  	 <h3><li><a href="http://127.0.0.1:8000/blog/{{i.id}}/"><span style="color:orange; font-family: cursive;"> {{i.article_name}}</span></a></li></h3>
@@ -17,5 +17,63 @@
 	</div>
 	 
 	     
-{% endfor %}
+{% endfor %} -->
  
+
+<div style="margin-top: 50px">
+
+<table cellspacing="10px" cellpadding="10px" border="solid" width="100%" style="margin-top:20px, border:2px" class="table" >
+<!-- <tr><th class="data">Name</th><th>Experience</th><th>Area</th><th>Contact</th><th>profile</th></tr> -->
+{% for i in items %}
+
+	<!-- <center>
+	<div ><center>
+	 
+		 
+		<tr ><td>{{ i.name}}</td><td>{{ i.experience }}</td><td>{{ i.area }}</td><td>{{i.contact}}</td><td><center><button class="btn btn-primary"><a href="http://127.0.0.1:8000/{{i.id}}/detail/"> <span style="color: white">View profile</span></a></button></center></td></tr>
+
+	 
+	</center>
+	</div>
+	</center> -->
+
+
+ <div class="col-sm-4 col-lg-2"  style="height: 200px">
+                    <div class="thumbnail" style="box-shadow:  5px 7px 5px 5px lightgrey; background-color: white;">
+                       
+                           
+                       
+                        <div class="caption">
+                            <h3><a href="http://127.0.0.1:8000/blog/{{i.id}}/"><span style="color:orange; font-family: cursive;"> {{i.article_name}}</span></a></h2>
+                            <h4><small>{{ i.author }}</small></h4>
+                            
+
+                            <!-- Delete Album -->
+                            <form action="#" method="post" style="display: inline;">
+                                {% csrf_token %}
+                                <input type="hidden" name="album_id" value="{{ album.id }}" />
+                                <button type="submit" class="btn btn-default btn-sm">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </button>
+                            </form>
+
+                            <!-- Favorite Album -->
+                            <a href="" class="btn btn-default btn-sm btn-favorite" role="button">
+                                <span class="glyphicon glyphicon-star  "></span>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+                 
+
+{% endfor %}
+  
+</table>
+
+
+ 
+
+ </h3>
+
+</div>

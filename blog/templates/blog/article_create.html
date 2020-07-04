@@ -5,11 +5,12 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+{% include 'nav.html'%}
 
 
 <form action="." method="post">{% csrf_token %}
 		<!-- {{ form.as_p }} -->
- {% include 'nav.html'%}
+ 
   <center> 
    
 <h3><span style="color: green;font-family:cursive; ">Write Your View..</span></h3>
@@ -28,9 +29,10 @@
 	</div>
 <br><br>
 {% endfor %}
-<br>
-		<input type="submit" name="" value="POST" class="btn btn-warning" style="float: left">	
- 
+<br>	
+<div style="text-align: center;">
+	<input type="submit" name="" value="POST" class="btn" style="background-color: green; color: white;width: 200px; margin-top: 20px">	
+</div> 
  
     </form>
 
