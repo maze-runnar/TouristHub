@@ -61,7 +61,7 @@ and get more reach by your passion.
 <a href="https://ibb.co/92jpXbw"><img src="https://i.ibb.co/tc5HfqZ/Screenshot-from-2020-04-22-10-07-24.png" alt="Screenshot-from-2020-04-22-10-07-24" border="0"></a>
 
 **Home page** with trending guides and places and some mind blowing arts of the day.
-
+<img src = "https://camo.githubusercontent.com/20fb9c85e4f97b79ebc4ea795c728d8ff517106f/68747470733a2f2f692e6962622e636f2f386a78326450362f53637265656e73686f742d66726f6d2d323032302d30372d30342d31382d34382d30312e706e67">
 <a href="https://ibb.co/XYwtyCV"><img src="https://i.ibb.co/phmdWLn/Screenshot-from-2020-04-22-10-09-47.png" alt="Screenshot-from-2020-04-22-10-09-47" border="0"></a>
 
 **Signup page**
